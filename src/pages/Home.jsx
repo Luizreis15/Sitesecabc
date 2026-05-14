@@ -18,9 +18,21 @@ const Home = () => {
   const heroPlugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }));
 
   const banners = [
-    { img: '/images/Hero_Banner_1_Desktop.png', alt: 'SECABC - Sindicato dos Empregados no Comércio do ABC' },
-    { img: '/images/Hero_Banner_2_Desktop.png', alt: 'Benefícios e serviços para os comerciários do ABC' },
-    { img: '/images/Hero_Banner_3_Desktop.png', alt: 'Homologações e assessoria jurídica para trabalhadores' },
+    {
+      desktop: '/images/Hero_Banner_1_Desktop.png',
+      mobile: '/images/Hero_Banner_1_Mobile.png',
+      alt: 'SECABC - Sindicato dos Empregados no Comércio do ABC',
+    },
+    {
+      desktop: '/images/Hero_Banner_2_Desktop.png',
+      mobile: '/images/Hero_Banner_2_Mobile.png',
+      alt: 'Benefícios e serviços para os comerciários do ABC',
+    },
+    {
+      desktop: '/images/Hero_Banner_3_Desktop.png',
+      mobile: '/images/Hero_Banner_3_Mobile.png',
+      alt: 'Homologações e assessoria jurídica para trabalhadores',
+    },
   ];
 
   const handleNotImplemented = (e) => {
@@ -77,12 +89,15 @@ const Home = () => {
           <CarouselContent>
             {banners.map((banner, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-[420px] sm:h-[520px] lg:h-[600px]">
-                  <img
-                    src={banner.img}
-                    alt={banner.alt}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative h-[500px] md:h-[600px]">
+                  <picture className="w-full h-full">
+                    <source media="(max-width: 767px)" srcSet={banner.mobile} />
+                    <img
+                      src={banner.desktop}
+                      alt={banner.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </picture>
                 </div>
               </CarouselItem>
             ))}
