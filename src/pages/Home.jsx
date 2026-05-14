@@ -18,9 +18,9 @@ const Home = () => {
   const heroPlugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }));
 
   const banners = [
-    { img: '/images/banners/banner-1.jpg', alt: 'SECABC - Sindicato dos Empregados no Comércio do ABC' },
-    { img: '/images/banners/banner-2.jpg', alt: 'Benefícios e serviços para os comerciários do ABC' },
-    { img: '/images/banners/banner-3.jpg', alt: 'Homologações e assessoria jurídica para trabalhadores' },
+    { img: '/images/Hero_Banner_1_Desktop.png', alt: 'SECABC - Sindicato dos Empregados no Comércio do ABC' },
+    { img: '/images/Hero_Banner_2_Desktop.png', alt: 'Benefícios e serviços para os comerciários do ABC' },
+    { img: '/images/Hero_Banner_3_Desktop.png', alt: 'Homologações e assessoria jurídica para trabalhadores' },
   ];
 
   const handleNotImplemented = (e) => {
