@@ -255,6 +255,7 @@ export function MeuForm() {
 - Nunca criar novo popup sem verificar se já existe um ativo (`SimplePopup` na Home)
 - Nunca usar `<a href>` para links internos — sempre `<Link to>` do react-router
 - Nunca expor `SUPABASE_SERVICE_ROLE_KEY` no frontend
+- Nunca adicionar overlay escuro (`bg-black/*`, `bg-blue-900/*`, `opacity`) sobre banners e imagens que já têm texto embutido no próprio arquivo. Overlays só fazem sentido quando há texto gerado por código sobreposto à imagem. Exemplo: `Home.jsx` linha 86 tinha `bg-black/50` cobrindo todo o carousel — removido em 14/05/2026.
 
 ---
 
