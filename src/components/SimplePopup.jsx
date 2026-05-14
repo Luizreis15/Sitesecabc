@@ -5,11 +5,8 @@ const SimplePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Check if popup has already been shown
     const hasShown = localStorage.getItem('popupShown');
-    
     if (!hasShown) {
-      // Add a slight delay to ensure smooth page load before showing
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 500);
@@ -25,39 +22,54 @@ const SimplePopup = () => {
   const handleImageClick = () => {
     localStorage.setItem('popupShown', 'true');
     setIsOpen(false);
-    window.open('https://www.veramo.com.br/apresentacaosec', '_blank', 'noopener,noreferrer');
+    window.open('https://caminhada.secabc.online', '_blank', 'noopener,noreferrer');
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6">
-      <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col items-center justify-center border border-gray-100 animate-in fade-in zoom-in duration-300">
-        
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 flex items-center justify-center h-10 w-10 bg-black/10 hover:bg-black/20 text-gray-800 rounded-full backdrop-blur-sm transition-all hover:scale-110 focus:outline-none"
-          aria-label="Fechar"
-        >
-          <X size={20} strokeWidth={2.5} />
-        </button>
+    <>
+      {/* Overlay — cobre tela toda, clique fora fecha */}
+      <div
+        className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm"
+        onClick={handleClose}
+      />
 
-        {/* Image Area */}
-        <div 
-          className="relative group cursor-pointer w-full flex justify-center bg-white"
-          onClick={handleImageClick}
-        >
+      {/* Modal — centralizado na viewport via translate, independente do scroll */}
+      <div
+        className="fixed z-[9999] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        style={{ width: 'min(800px, 90vw)' }}
+      >
+        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+
+          {/* Botão fechar */}
+          <button
+            onClick={handleClose}
+            className="absolute top-2 right-2 z-10 flex items-center justify-center h-9 w-9 bg-black/30 hover:bg-black/50 text-white rounded-full transition-all hover:scale-110 focus:outline-none"
+            aria-label="Fechar"
+          >
+            <X size={18} strokeWidth={2.5} />
+          </button>
+
+          {/* Imagem desktop — 800×450px, 16:9, visível em md+ */}
           <img
-            src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/848cb067be63499d62cc2394244ed8dd.png"
-            alt="Apresentação SECABC e Veramo"
-            className="w-full h-auto max-h-[85vh] object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+            src="/images/Pop-up-Desktop.png"
+            alt="SECABC - Clique para saber mais"
+            onClick={handleImageClick}
+            className="hidden md:block w-full h-auto cursor-pointer"
           />
-          {/* Subtle overlay on hover */}
-          <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+          {/* Imagem mobile — 380×520px, 3:4, visível abaixo de md */}
+          <img
+            src="/images/Pop-up-Mobile.png"
+            alt="SECABC - Clique para saber mais"
+            onClick={handleImageClick}
+            className="block md:hidden w-full h-auto cursor-pointer"
+          />
+
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
