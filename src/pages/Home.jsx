@@ -217,7 +217,7 @@ const Home = () => {
               transition={{ duration: 0.5 }}
             >
               <img
-                src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/fde0d1353e21b47fba2ccf43416adce8.png"
+                src="/images/Presidente_Ademar.jpeg"
                 alt="Presidente do SECABC"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg border-4 border-white"
               />
