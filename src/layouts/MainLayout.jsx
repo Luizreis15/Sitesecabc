@@ -175,7 +175,7 @@ const MainLayout = () => {
             </div>
             <div className="hidden sm:flex items-center gap-2">
               <Button asChild size="sm" variant="outline" className="border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white whitespace-nowrap">
-                <a href="https://www.veramo.com.br/login" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.veramo.com.br" target="_blank" rel="noopener noreferrer">
                   Homologar Online
                 </a>
               </Button>
@@ -259,7 +259,7 @@ const MainLayout = () => {
             </nav>
             <div className="mt-8 flex flex-col space-y-4">
               <Button asChild size="mobile" variant="outline">
-                <a href="https://www.veramo.com.br/login" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.veramo.com.br" target="_blank" rel="noopener noreferrer">
                   Homologar Online
                 </a>
               </Button>
