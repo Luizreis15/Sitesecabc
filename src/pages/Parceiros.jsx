@@ -38,7 +38,7 @@ import React from 'react';
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/3d570febf46af00e465366c5106b7ed7.png", alt: "Logotipo Lopes Supermercados" },
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/7ddb72522b63f87de2a1534eb4a8c29f.png", alt: "Logotipo Nivalmix.com" },
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/15ee4d1e9cbaaeef901eb95cf894f60e.png", alt: "Logotipo Perfil Incorporações Construções" },
-        { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/72a73b6ef97a78c5905e431a2d12cd6b.png", alt: "Logotipo Pixolé" },
+        { imgSrc: "/images/logo-pixole.png", alt: "Logotipo Pixolé" },
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/369b5302a27e01c6c823044306cd9372.png", alt: "Logotipo Sagrada Família Saúde" },
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/92496223c011b9c1eca873c24764e854.png", alt: "Logotipo São Judas Tadeu Supermercados" },
         { imgSrc: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/fe527a2fcb5ef380c9e61ec2f01e643b.png", alt: "Logotipo Sonda Supermercados" },
