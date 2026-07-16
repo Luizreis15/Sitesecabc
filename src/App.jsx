@@ -20,6 +20,7 @@ import React from 'react';
     import LGPD from '@/pages/LGPD';
     import NotFound from '@/pages/NotFound';
     import OSindicato from '@/pages/OSindicato';
+    import Links from '@/pages/Links';
 
     function App() {
       const location = useLocation();
@@ -32,6 +33,7 @@ import React from 'react';
           </Helmet>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
+              <Route path="/links" element={<Links />} />
               <Route path="/" element={<MainLayout />}>
                 <Route index element={<Home />} />
                 <Route path="sedes-regionais" element={<SedesRegionais />} />
