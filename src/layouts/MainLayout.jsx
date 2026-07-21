@@ -164,9 +164,9 @@ const MainLayout = () => {
         <div className="bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center min-h-[40px] py-1.5 md:py-1">
             <div className="flex items-center space-x-4">
-              <a href="https://wa.me/11933194304" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center text-sm hover:text-accent transition-colors">
-                <MessageCircle size={14} className="mr-1.5" />
-                (11) 93319-4304
+              <a href="tel:+551149921522" className="hidden sm:flex items-center text-sm hover:text-accent transition-colors">
+                <Phone size={14} className="mr-1.5" />
+                11-4992-1522
               </a>
               <a href="mailto:adm@secabc.org.br" className="flex items-center text-xs sm:text-sm hover:text-accent transition-colors">
                 <Mail size={14} className="mr-1.5" />

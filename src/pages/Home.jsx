@@ -19,19 +19,22 @@ const Home = () => {
 
   const banners = [
     {
-      desktop: '/images/Hero_Banner_1_Desktop.png',
-      mobile: '/images/Hero_Banner_1_Mobile.png',
-      alt: 'SECABC - Sindicato dos Empregados no Comércio do ABC',
+      desktop: '/images/banners/Banner1_Desktop.png',
+      mobile: '/images/banners/Banner1_Mobile.png',
+      alt: 'SECABC - Festa das Crianças',
+      href: 'https://www.secabc.online/festa-criancas',
     },
     {
-      desktop: '/images/Hero_Banner_2_Desktop.png',
-      mobile: '/images/Hero_Banner_2_Mobile.png',
-      alt: 'Benefícios e serviços para os comerciários do ABC',
+      desktop: '/images/banners/Banner2_Desktop.png',
+      mobile: '/images/banners/Banner2_Mobile.png',
+      alt: 'Agende sua homologação online',
+      href: 'https://www.veramo.com.br',
     },
     {
-      desktop: '/images/Hero_Banner_3_Desktop.png',
-      mobile: '/images/Hero_Banner_3_Mobile.png',
-      alt: 'Homologações e assessoria jurídica para trabalhadores',
+      desktop: '/images/banners/Banner3_Desktop.png',
+      mobile: '/images/banners/Banner3_Mobile.png',
+      alt: 'Instagram SECABC',
+      href: 'https://www.instagram.com/secabc_',
     },
   ];
 
@@ -89,7 +92,13 @@ const Home = () => {
           <CarouselContent>
             {banners.map((banner, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-[500px] md:h-[600px]">
+                <a
+                  href={banner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block h-[500px] md:h-[600px]"
+                  aria-label={banner.alt}
+                >
                   <picture className="w-full h-full">
                     <source media="(max-width: 767px)" srcSet={banner.mobile} />
                     <img
@@ -98,7 +107,7 @@ const Home = () => {
                       className="w-full h-full object-cover"
                     />
                   </picture>
-                </div>
+                </a>
               </CarouselItem>
             ))}
           </CarouselContent>

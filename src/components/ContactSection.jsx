@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from "@/components/ui/use-toast";
-import { MessageCircle, Mail, PiggyBank, Loader2 } from 'lucide-react';
+import { Phone, Mail, PiggyBank, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 const sedeData = {
@@ -78,9 +78,9 @@ const ContactSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center mb-12">
-          <a href="https://wa.me/11933194304" target="_blank" rel="noopener noreferrer" className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
-            <MessageCircle size={24} className="text-green-400" />
-            <span>(11) 93319-4304</span>
+          <a href="tel:+551149921522" className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
+            <Phone size={24} className="text-highlight" />
+            <span>11-4992-1522</span>
           </a>
           <a href="mailto:adm@secabc.org.br" className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
             <Mail size={24} />
