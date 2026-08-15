@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, CheckCircle2, Calendar, MapPin, Download, Image as ImageIcon, Loader2 } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { WHATSAPP_HOMOLOGACAO_NUMBER, buildWhatsappUrl } from '@/lib/contact';
 
 const Homologacoes = () => {
   const { toast } = useToast();
@@ -15,7 +16,7 @@ const Homologacoes = () => {
   const DOC_IMAGE_URL = "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5d6a78fcbbbb041194681bbc01f81d4b.png";
 
   const handleAgendar = () => {
-    window.open("https://wa.me/5511953905032", "_blank", "noopener,noreferrer");
+    window.open(buildWhatsappUrl(WHATSAPP_HOMOLOGACAO_NUMBER), "_blank", "noopener,noreferrer");
   };
 
   const handleDownloadImage = async () => {

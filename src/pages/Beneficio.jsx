@@ -10,13 +10,14 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Autoplay from "embla-carousel-autoplay";
 import { MessageCircle, Waves, Utensils, BedDouble, PlayCircle, MapPin, Star } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { WHATSAPP_NUMBER, buildWhatsappUrl } from '@/lib/contact';
 
 const ComplexoEcoPage = () => {
   const { toast } = useToast();
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
   const handleReserveClick = () => {
-    window.open('https://wa.me/11933194304?text=Ol%C3%A1%2C+gostaria+de+fazer+uma+reserva+no+Complexo+Eco!', '_blank');
+    window.open(buildWhatsappUrl(WHATSAPP_NUMBER, 'Olá, gostaria de fazer uma reserva no Complexo Eco!'), '_blank');
   };
 
   const galleryImages = [
@@ -212,7 +213,7 @@ const ComplexoEcoPage = () => {
         </footer>
       </div>
       <a
-        href="https://wa.me/11933194304?text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+Complexo+Eco"
+        href={buildWhatsappUrl(WHATSAPP_NUMBER, 'Olá, gostaria de informações sobre o Complexo Eco')}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 flex items-center bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors"
@@ -278,7 +279,7 @@ const DefaultBeneficioPage = ({ beneficio }) => {
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <Button onClick={handleNotImplemented} size="lg">Agendar / Consultar</Button>
             <Button asChild size="lg" variant="outline">
-              <a href={`https://wa.me/11933194304?text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+benef%C3%ADcio+${beneficio.name}`} target="_blank" rel="noopener noreferrer">
+              <a href={buildWhatsappUrl(WHATSAPP_NUMBER, `Olá, gostaria de informações sobre o benefício ${beneficio.name}`)} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-5 w-5" /> Falar no WhatsApp
               </a>
             </Button>

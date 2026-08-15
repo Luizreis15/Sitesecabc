@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from "@/components/ui/use-toast";
 import ContactSection from '@/components/ContactSection';
 import Img from '@/components/Img';
+import { WHATSAPP_NUMBER, PHONE_TEL, PHONE_DISPLAY, buildWhatsappUrl } from '@/lib/contact';
 
 const Dropdown = ({ item, isMobile, closeMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -165,9 +166,9 @@ const MainLayout = () => {
         <div className="bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center min-h-[40px] py-1.5 md:py-1">
             <div className="flex items-center space-x-4">
-              <a href="tel:+551149921522" className="hidden sm:flex items-center text-sm hover:text-accent transition-colors">
+              <a href={`tel:${PHONE_TEL}`} className="hidden sm:flex items-center text-sm hover:text-accent transition-colors">
                 <Phone size={14} className="mr-1.5" />
-                11-4992-1522
+                {PHONE_DISPLAY}
               </a>
               <a href="mailto:adm@secabc.org.br" className="flex items-center text-xs sm:text-sm hover:text-accent transition-colors">
                 <Mail size={14} className="mr-1.5" />
@@ -326,7 +327,7 @@ const MainLayout = () => {
       </footer>
       
       <a
-        href="https://wa.me/11933194304"
+        href={buildWhatsappUrl(WHATSAPP_NUMBER)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale conosco via WhatsApp"

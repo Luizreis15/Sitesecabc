@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from "@/components/ui/use-toast";
 import { Phone, Mail, PiggyBank, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { PHONE_TEL, PHONE_DISPLAY } from '@/lib/contact';
 
 const sedeData = {
   maua: {
@@ -79,9 +80,9 @@ const ContactSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center mb-12">
-          <a href="tel:+551149921522" className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
+          <a href={`tel:${PHONE_TEL}`} className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
             <Phone size={24} className="text-highlight" />
-            <span>11-4992-1522</span>
+            <span>{PHONE_DISPLAY}</span>
           </a>
           <a href="mailto:adm@secabc.org.br" className="border border-white/50 rounded-lg px-6 py-3 flex items-center gap-4 hover:bg-white/10 transition-colors w-full md:w-auto justify-center">
             <Mail size={24} />

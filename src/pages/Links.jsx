@@ -16,14 +16,14 @@ import {
   Phone,
   Mail,
 } from 'lucide-react'
+import { WHATSAPP_NUMBER, PHONE_TEL, PHONE_DISPLAY, buildWhatsappUrl } from '@/lib/contact'
 
-const WHATSAPP_NUMBER = '5511933194304'
-
-const whatsappAssociado = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+const whatsappAssociado = buildWhatsappUrl(
+  WHATSAPP_NUMBER,
   'Olá! Quero saber mais sobre como me tornar associado do SECABC e conhecer os benefícios exclusivos.'
-)}`
+)
 
-const whatsappGeral = `https://wa.me/${WHATSAPP_NUMBER}`
+const whatsappGeral = buildWhatsappUrl(WHATSAPP_NUMBER)
 
 // Banners do carrossel "Destaques" — edite aqui (imagem, link e alt de cada slide)
 const BANNERS = [
@@ -480,11 +480,11 @@ export default function Links() {
                 Rua Padre Manoel de Paiva, 55 – Jardim, Santo André – SP – CEP 09070-230
               </span>
               <a
-                href="tel:+551149921522"
+                href={`tel:${PHONE_TEL}`}
                 className="flex items-center gap-1.5 transition-colors hover:text-highlight"
               >
                 <Phone size={13} className="shrink-0 text-accent" />
-                11-4992-1522
+                {PHONE_DISPLAY}
               </a>
               <a
                 href="mailto:adm@secabc.org.br"
