@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "src": "^/secabc/o-sindicato/onde-estamos/?$", "headers": { "Location": "/sedes-regionais" }, "status": 301 },
+    { "src": "^/beneficios_pagina/sede-sindical/?$", "headers": { "Location": "/o-sindicato" }, "status": 301 },
+    { "src": "^/beneficios_pagina/fmu-centro-universitario-ead/?$", "headers": { "Location": "/beneficios/convenios" }, "status": 301 },
+    { "src": "^/beneficios_pagina/universidade-estacio-de-sa/?$", "headers": { "Location": "/beneficios/convenios" }, "status": 301 },
+    { "src": "^/beneficios_pagina/colegio-brasilia-sbc/?$", "headers": { "Location": "/beneficios/convenios" }, "status": 301 },
+    { "src": "^/juridico/?$", "headers": { "Location": "/beneficios/juridico" }, "status": 301 },
+    { "src": "^/c%C3%B3pia-homologa%C3%A7%C3%A3o/?$", "headers": { "Location": "/servicos/homologacoes" }, "status": 301 },
+    { "src": "^/not%C3%ADcias/page/([0-9]+)/?$", "headers": { "Location": "/noticias" }, "status": 301 },
+    { "src": "^/category(/.*)?$", "headers": { "Location": "/noticias" }, "status": 301 },
+    { "src": "^/secabc/wp-content/uploads/2020/01/Varejista-2019-2020\\.pdf$", "status": 410 },
+    { "src": "^/secabc(/.*)?$", "headers": { "Location": "/noticias" }, "status": 301 }
+  ]
+}

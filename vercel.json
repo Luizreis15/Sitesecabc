@@ -1,11 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/wp-admin/:path*", "destination": "/__not_found__" },
-    { "source": "/wp-login.php", "destination": "/__not_found__" },
-    { "source": "/wp-json/:path*", "destination": "/__not_found__" },
-    { "source": "/xmlrpc.php", "destination": "/__not_found__" },
-    { "source": "/wp-includes/:path*", "destination": "/__not_found__" },
-    { "source": "/wp-content/:path*", "destination": "/__not_found__" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "src": "^/wp-admin(/.*)?$", "status": 404 },
+    { "src": "^/wp-login\\.php$", "status": 404 },
+    { "src": "^/wp-json(/.*)?$", "status": 404 },
+    { "src": "^/xmlrpc\\.php$", "status": 404 },
+    { "src": "^/wp-includes(/.*)?$", "status": 404 },
+    { "src": "^/wp-content(/.*)?$", "status": 404 },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
