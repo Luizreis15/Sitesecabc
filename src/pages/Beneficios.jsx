@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -21,10 +21,11 @@ const Beneficios = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Benefícios | SECABC</title>
-        <meta name="description" content="Conheça todos os benefícios que o SECABC oferece aos seus associados, desde saúde e lazer até assessoria jurídica." />
-      </Helmet>
+      <Seo
+        title="Benefícios | SECABC"
+        description="Conheça todos os benefícios que o SECABC oferece aos seus associados, desde saúde e lazer até assessoria jurídica."
+        path="/beneficios"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold text-center font-heading">Nossos Benefícios</h1>
         <p className="mt-4 text-center text-lg text-brand-ui max-w-3xl mx-auto">Vantagens exclusivas pensadas para o bem-estar e a segurança dos comerciários e suas famílias.</p>

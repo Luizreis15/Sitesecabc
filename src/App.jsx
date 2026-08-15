@@ -1,7 +1,7 @@
 import React from 'react';
     import { Routes, Route, useLocation } from 'react-router-dom';
     import { AnimatePresence } from 'framer-motion';
-    import { Helmet } from 'react-helmet';
+    import { Helmet } from 'react-helmet-async';
 
     import MainLayout from '@/layouts/MainLayout';
     import Home from '@/pages/Home';

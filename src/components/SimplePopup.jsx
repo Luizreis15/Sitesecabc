@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
+import Img from '@/components/Img';
 
 const SimplePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,13 +50,13 @@ const SimplePopup = () => {
           >
             <X size={18} strokeWidth={2.5} />
           </button>
-          <img
+          <Img
             src="/images/Pop-up-Desktop.png"
             alt="SECABC - Clique para saber mais"
             onClick={handleImageClick}
             className="hidden md:block w-full h-auto cursor-pointer"
           />
-          <img
+          <Img
             src="/images/Pop-up-Mobile.png"
             alt="SECABC - Clique para saber mais"
             onClick={handleImageClick}

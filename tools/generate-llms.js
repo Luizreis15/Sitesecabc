@@ -24,7 +24,11 @@ const EXTRACTION_REGEX = {
   helmet: /<Helmet[^>]*?>([\s\S]*?)<\/Helmet>/i,
   helmetTest: /<Helmet[\s\S]*?<\/Helmet>/i,
   title: /<title[^>]*?>\s*(.*?)\s*<\/title>/i,
-  description: /<meta\s+name=["']description["']\s+content=["'](.*?)["']/i
+  description: /<meta\s+name=["']description["']\s+content=["'](.*?)["']/i,
+  seo: /<Seo\b[\s\S]*?\/>/i,
+  seoTest: /<Seo\b[\s\S]*?\/>/i,
+  seoTitle: /title=["']([^"']+)["']/,
+  seoDescription: /description=["']([^"']+)["']/
 };
 
 function cleanContent(content) {
@@ -87,20 +91,31 @@ function findReactFiles(dir) {
 
 function extractHelmetData(content, filePath, routes) {
   const cleanedContent = cleanContent(content);
-  
-  if (!EXTRACTION_REGEX.helmetTest.test(cleanedContent)) {
+
+  const hasHelmet = EXTRACTION_REGEX.helmetTest.test(cleanedContent);
+  const hasSeo = EXTRACTION_REGEX.seoTest.test(cleanedContent);
+
+  if (!hasHelmet && !hasSeo) {
     return null;
   }
-  
-  const helmetMatch = content.match(EXTRACTION_REGEX.helmet);
-  if (!helmetMatch) return null;
-  
-  const helmetContent = helmetMatch[1];
-  const titleMatch = helmetContent.match(EXTRACTION_REGEX.title);
-  const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
-  
-  const title = cleanText(titleMatch?.[1]);
-  const description = cleanText(descMatch?.[1]);
+
+  let title, description;
+
+  if (hasHelmet) {
+    const helmetMatch = content.match(EXTRACTION_REGEX.helmet);
+    if (!helmetMatch) return null;
+
+    const helmetContent = helmetMatch[1];
+    title = cleanText(helmetContent.match(EXTRACTION_REGEX.title)?.[1]);
+    description = cleanText(helmetContent.match(EXTRACTION_REGEX.description)?.[1]);
+  } else {
+    const seoMatch = content.match(EXTRACTION_REGEX.seo);
+    if (!seoMatch) return null;
+
+    const seoContent = seoMatch[0];
+    title = cleanText(seoContent.match(EXTRACTION_REGEX.seoTitle)?.[1]);
+    description = cleanText(seoContent.match(EXTRACTION_REGEX.seoDescription)?.[1]);
+  }
   
   const fileName = path.basename(filePath, path.extname(filePath));
   const url = routes.length && routes.has(fileName) 

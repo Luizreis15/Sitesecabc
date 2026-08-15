@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <rect width="800" height="600" fill="#134C8A" />
+  <circle cx="400" cy="255" r="70" fill="none" stroke="#F6A52A" stroke-width="10" opacity="0.85" />
+  <path d="M220 430 L340 300 L430 380 L520 260 L600 430 Z" fill="none" stroke="#F6A52A" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" opacity="0.85" />
+  <text x="400" y="500" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="34" fill="#FFE47F" letter-spacing="2">SECABC</text>
+</svg>

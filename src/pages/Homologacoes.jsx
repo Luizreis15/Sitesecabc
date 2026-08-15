@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, CheckCircle2, Calendar, MapPin, Download, Image as ImageIcon, Loader2 } from 'lucide-react';
@@ -89,10 +89,11 @@ const Homologacoes = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Homologações | SECABC</title>
-        <meta name="description" content="Confira os documentos necessários para o processo de homologação de rescisão contractual no SECABC." />
-      </Helmet>
+      <Seo
+        title="Homologações | SECABC"
+        description="Confira os documentos necessários para o processo de homologação de rescisão contractual no SECABC."
+        path="/servicos/homologacoes"
+      />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
         <div className="text-center max-w-4xl mx-auto">

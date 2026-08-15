@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -15,10 +15,11 @@ const Servicos = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Serviços | SECABC</title>
-        <meta name="description" content="Conheça os serviços oferecidos pelo SECABC, como homologações, emissão de carteirinha e atualização cadastral." />
-      </Helmet>
+      <Seo
+        title="Serviços | SECABC"
+        description="Conheça os serviços oferecidos pelo SECABC, como homologações, emissão de carteirinha e atualização cadastral."
+        path="/servicos"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold text-center font-heading">Nossos Serviços</h1>
         <p className="mt-4 text-center text-lg text-brand-ui max-w-3xl mx-auto">Facilidades para o seu dia a dia profissional, com a confiança e o suporte do seu sindicato.</p>

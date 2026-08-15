@@ -1,20 +1,18 @@
 import React, { useRef } from 'react';
-import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Briefcase, Gavel, HeartPulse, Stethoscope, Ticket, Instagram, Facebook } from 'lucide-react';
+import { ArrowRight, Briefcase, Gavel, HeartPulse, Stethoscope, Ticket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
+import Img from '@/components/Img';
 import SimplePopup from '@/components/SimplePopup';
-import { useToast } from "@/hooks/use-toast";
 import { noticias } from '@/data/noticias';
 
 const Home = () => {
-  const { toast } = useToast();
-
   const heroPlugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }));
 
   const banners = [
@@ -37,14 +35,6 @@ const Home = () => {
       href: 'https://www.instagram.com/secabc_',
     },
   ];
-
-  const handleNotImplemented = (e) => {
-    e.preventDefault();
-    toast({
-      title: "Funcionalidade em breve!",
-      description: "🚧 Este recurso ainda não foi implementado—mas não se preocupe! Você pode solicitá-lo em seu próximo prompt! 🚀",
-    });
-  };
 
   const atalhos = [
     { icon: Briefcase, title: "Homologações", text: "Agende e realize sua homologação com segurança e suporte completo.", link: "/servicos/homologacoes" },
@@ -74,10 +64,11 @@ const Home = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Início | SECABC</title>
-        <meta name="description" content="Bem-vindo ao SECABC. Conheça nossos benefícios, serviços e junte-se a nós na luta pelos direitos dos comerciários do ABC." />
-      </Helmet>
+      <Seo
+        title="Início | SECABC"
+        description="Bem-vindo ao SECABC. Conheça nossos benefícios, serviços e junte-se a nós na luta pelos direitos dos comerciários do ABC."
+        path="/"
+      />
 
       {/* Simple Popup Modal */}
       <SimplePopup />
@@ -101,7 +92,7 @@ const Home = () => {
                 >
                   <picture className="w-full h-full">
                     <source media="(max-width: 767px)" srcSet={banner.mobile} />
-                    <img
+                    <Img
                       src={banner.desktop}
                       alt={banner.alt}
                       className="w-full h-full object-cover"
@@ -200,7 +191,7 @@ const Home = () => {
               >
                 <Card className="overflow-hidden h-full flex flex-col">
                   <div className="overflow-hidden h-48">
-                    <img alt={`Sede Regional de ${sede.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={sede.img} />
+                    <Img alt={`Sede Regional de ${sede.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={sede.img} />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold font-heading">{sede.name}</h3>
@@ -225,7 +216,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img
+              <Img
                 src="/images/Presidente_Ademar.jpeg"
                 alt="Presidente do SECABC"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg border-4 border-white"
@@ -259,7 +250,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <img
+            <Img
               src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/af13c4f32b96d04d72f502f2d9764948.png"
               alt="Diretoria do SECABC reunida"
               className="rounded-lg shadow-xl mx-auto"
@@ -268,24 +259,8 @@ const Home = () => {
           <p className="mt-8 text-lg text-brand-ui max-w-4xl mx-auto italic">"Unidos por um propósito comum, nossa diretoria é composta por comerciários que conhecem a realidade da categoria. Trabalhamos com transparência, ética e compromisso para garantir que cada decisão tomada reflita os interesses e as necessidades de nossos associados. Estamos aqui para servir e lutar por você."</p>
         </section>
 
-        {/* Social Feed Section Placeholder */}
-        <section>
-          <h2 className="text-3xl md:text-4xl font-bold text-center font-heading text-brand-text">Fique por Dentro</h2>
-          <p className="mt-4 text-center text-lg text-brand-ui max-w-3xl mx-auto">Acompanhe nossas novidades e ações nas redes sociais.</p>
-          <div className="mt-12 p-8 bg-gray-50 rounded-lg text-center">
-            <p className="text-brand-ui">A integração com Instagram e Facebook será adicionada em breve.</p>
-            <div className="mt-6 flex justify-center space-x-6">
-              <Button onClick={handleNotImplemented} variant="outline" className="bg-white">
-                <Instagram className="mr-2 h-5 w-5" /> Instagram
-              </Button>
-              <Button onClick={handleNotImplemented} variant="outline" className="bg-white">
-                <Facebook className="mr-2 h-5 w-5" /> Facebook
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* News Section */}
+        {noticiasRecentes.length > 0 && (
         <section>
           <h2 className="text-3xl md:text-4xl font-bold text-center font-heading text-brand-text">Últimas Notícias</h2>
           <p className="mt-4 text-center text-lg text-brand-ui max-w-3xl mx-auto">Mantenha-se informado sobre as principais novidades do sindicato e do comércio.</p>
@@ -301,7 +276,7 @@ const Home = () => {
               >
                 <Card className="overflow-hidden h-full flex flex-col">
                   <div className="overflow-hidden h-56">
-                    <img alt={noticia.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={noticia.img} />
+                    <Img alt={noticia.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={noticia.img} />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <p className="text-sm text-brand-ui mb-2">{noticia.date}</p>
@@ -320,6 +295,7 @@ const Home = () => {
             </Button>
           </div>
         </section>
+        )}
       </div>
     </PageTransition>
   );

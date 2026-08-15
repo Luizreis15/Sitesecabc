@@ -1,14 +1,15 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 
 const PoliticaPrivacidade = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Política de Privacidade | SECABC</title>
-        <meta name="description" content="Conheça nossa Política de Privacidade e saiba como o SECABC trata e protege seus dados." />
-      </Helmet>
+      <Seo
+        title="Política de Privacidade | SECABC"
+        description="Conheça nossa Política de Privacidade e saiba como o SECABC trata e protege seus dados."
+        path="/politica-de-privacidade"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose max-w-4xl mx-auto">
           <h1>Política de Privacidade</h1>

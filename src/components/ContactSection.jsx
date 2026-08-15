@@ -33,6 +33,7 @@ const ContactSection = () => {
   const location = useLocation();
   const params = useParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMapActive, setIsMapActive] = useState(false);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -89,9 +90,31 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="w-full">
-            <iframe className="w-full h-96 md:h-[500px] rounded-lg shadow-lg border-4 border-white" src={embedSrc} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade">
-            </iframe>
+          <div
+            className="relative w-full"
+            onMouseLeave={() => setIsMapActive(false)}
+          >
+            <iframe
+              className="w-full h-96 md:h-[500px] rounded-lg shadow-lg border-4 border-white"
+              src={embedSrc}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ pointerEvents: isMapActive ? 'auto' : 'none' }}
+              title="Mapa de localização do SECABC"
+            />
+            {!isMapActive && (
+              <button
+                type="button"
+                onClick={() => setIsMapActive(true)}
+                className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/0 hover:bg-black/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                aria-label="Clique para interagir com o mapa"
+              >
+                <span className="rounded-md bg-white/90 px-4 py-2 text-sm font-medium text-brand-text shadow">
+                  Clique para interagir com o mapa
+                </span>
+              </button>
+            )}
           </div>
 
           <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -126,7 +149,7 @@ const ContactSection = () => {
               <label htmlFor="message" className="block text-sm font-medium mb-1">Mensagem</label>
               <textarea id="message" rows="5" placeholder="Digite aqui sua dúvida." className="w-full p-2 rounded-md bg-white text-black border border-input"></textarea>
             </div>
-            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/80 text-white font-bold text-lg">
+            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg">
               {isSubmitting ? (
                 <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Enviando...</>
               ) : (

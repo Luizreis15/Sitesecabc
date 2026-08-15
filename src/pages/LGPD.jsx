@@ -1,14 +1,15 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 
 const LGPD = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>LGPD | SECABC</title>
-        <meta name="description" content="Saiba como o SECABC se adequa à Lei Geral de Proteção de Dados (LGPD) e como você pode exercer seus direitos." />
-      </Helmet>
+      <Seo
+        title="LGPD | SECABC"
+        description="Saiba como o SECABC se adequa à Lei Geral de Proteção de Dados (LGPD) e como você pode exercer seus direitos."
+        path="/lgpd"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose max-w-4xl mx-auto">
           <h1>Lei Geral de Proteção de Dados (LGPD)</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 import { useParams } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from '@/components/ui/button';
@@ -41,10 +41,7 @@ const Servico = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Helmet>
+      <Seo title={pageTitle} description={metaDescription} path={`/servicos/${slug}`} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold font-heading">{servico.name}</h1>
         <div className="mt-8 prose max-w-none">

@@ -1,6 +1,7 @@
 import React from 'react';
-    import { Helmet } from 'react-helmet';
     import PageTransition from '@/components/PageTransition';
+    import Seo from '@/components/Seo';
+    import Img from '@/components/Img';
     import { Link } from 'react-router-dom';
     import { Card, CardContent } from '@/components/ui/card';
     import { Button } from '@/components/ui/button';
@@ -16,10 +17,11 @@ import React from 'react';
 
       return (
         <PageTransition>
-          <Helmet>
-            <title>Sedes Regionais | SECABC</title>
-            <meta name="description" content="Encontre a sede do SECABC mais próxima de você. Atendimento em Mauá, São Caetano, São Bernardo e Diadema." />
-          </Helmet>
+          <Seo
+            title="Sedes Regionais | SECABC"
+            description="Encontre a sede do SECABC mais próxima de você. Atendimento em Mauá, São Caetano, São Bernardo e Diadema."
+            path="/sedes-regionais"
+          />
           <div className="bg-background">
             <header className="bg-primary/5 py-20">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -34,7 +36,7 @@ import React from 'react';
                   <Card key={sede.name} className="overflow-hidden group bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
                     <div className="md:flex">
                       <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
-                        <img alt={`Fachada da sede regional de ${sede.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={sede.img} />
+                        <Img alt={`Fachada da sede regional de ${sede.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={sede.img} />
                       </div>
                       <div className="p-8 flex flex-col justify-center md:w-1/2">
                         <h2 className="text-2xl font-bold font-heading">{sede.name}</h2>

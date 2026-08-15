@@ -1,6 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
+import Img from '@/components/Img';
 import { useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Clock, Briefcase, Gavel, Stethoscope, Smile, Landmark, User, Calendar } from 'lucide-react';
@@ -105,13 +106,10 @@ const SedeRegional = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Helmet>
-      
+      <Seo title={pageTitle} description={metaDescription} path={`/sedes-regionais/${slug}`} />
+
       <div className="relative bg-gray-800 h-80 flex items-center justify-center text-white overflow-hidden">
-        <img className="absolute inset-0 w-full h-full object-cover" alt={`Imagem de destaque da sede de ${sede.name}`} src={sede.heroImg} />
+        <Img className="absolute inset-0 w-full h-full object-cover" alt={`Imagem de destaque da sede de ${sede.name}`} src={sede.heroImg} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -171,7 +169,7 @@ const SedeRegional = () => {
               <p className="mt-2 text-brand-ui">Um pouco do nosso espaço em {sede.name}.</p>
               <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
                 {sede.images && sede.images.map((imgSrc, index) => (
-                  <img key={index} className="rounded-lg shadow-md aspect-square object-cover" alt={`Imagem ${index + 1} da sede de ${sede.name}`} src={imgSrc} />
+                  <Img key={index} className="rounded-lg shadow-md aspect-square object-cover" alt={`Imagem ${index + 1} da sede de ${sede.name}`} src={imgSrc} />
                 ))}
               </div>
             </section>
@@ -181,7 +179,7 @@ const SedeRegional = () => {
                 <h2 className="text-3xl font-bold font-heading">Diretor Responsável</h2>
                 <div className="mt-6 bg-gray-50 rounded-lg p-8 flex flex-col sm:flex-row items-center gap-8 shadow-sm">
                   <div className="flex-shrink-0">
-                    <img className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white" alt="Foto do Presidente" src={sede.presidente.foto} />
+                    <Img className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white" alt="Foto do Presidente" src={sede.presidente.foto} />
                   </div>
                   <div className="text-center sm:text-left">
                     <p className="text-2xl font-bold text-gray-800 flex items-center justify-center sm:justify-start">

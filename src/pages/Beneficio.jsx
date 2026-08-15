@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
+import Img from '@/components/Img';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -50,11 +51,11 @@ const ComplexoEcoPage = () => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Complexo Eco | Centro de Lazer SECABC</title>
-        <meta name="description" content="Lazer, natureza e diversão para toda a família comerciária. Conheça o Complexo Eco, o paraíso dos associados SECABC." />
-        <meta name="keywords" content="Centro de Lazer SECABC, Complexo Eco, Parque Aquático Comerciários, Lazer para toda a família" />
-      </Helmet>
+      <Seo
+        title="Complexo Eco | Centro de Lazer SECABC"
+        description="Lazer, natureza e diversão para toda a família comerciária. Conheça o Complexo Eco, o paraíso dos associados SECABC."
+        path="/beneficios/centro-de-lazer"
+      />
 
       <div className="bg-blue-50">
         <header className="relative text-center py-20 md:py-32 text-white bg-cover bg-center" style={{ backgroundImage: "url('https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b4720c2d5433de1483ab181ebdc9ec96.jpg')" }}>
@@ -80,17 +81,17 @@ const ComplexoEcoPage = () => {
               </p>
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div className="flex flex-col items-center">
-                  <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Acqua Park Logo" className="h-20" />
+                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Acqua Park Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-blue-800">EcoBlue Acqua Park</p>
                   <p className="text-sm text-gray-500">Parque aquático com toboáguas, rio lento e praia de areia branca com ondas artificiais.</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-20" />
+                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-green-800">EcoResort</p>
                   <p className="text-sm text-gray-500">Hospedagem completa com suítes, café da manhã e estrutura de lazer.</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Restaurante Logo" className="h-20" />
+                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Restaurante Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-yellow-800">Espaço Eco Restaurante</p>
                   <p className="text-sm text-gray-500">Culinária diversificada em ambiente natural e familiar.</p>
                 </div>
@@ -116,7 +117,7 @@ const ComplexoEcoPage = () => {
                           <DialogTrigger asChild>
                             <Card className="overflow-hidden cursor-pointer">
                               <CardContent className="flex aspect-square items-center justify-center p-0">
-                                <img src={src} alt={`Galeria Complexo Eco ${index + 1}`} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                                <Img src={src} alt={`Galeria Complexo Eco ${index + 1}`} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
                               </CardContent>
                             </Card>
                           </DialogTrigger>
@@ -201,10 +202,10 @@ const ComplexoEcoPage = () => {
         <footer className="bg-gray-800 text-white py-8">
           <div className="container mx-auto px-4 text-center">
             <div className="flex justify-center items-center space-x-6 md:space-x-10 mb-6">
-              <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Logo" className="h-12" />
-              <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-12" />
-              <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Logo" className="h-12" />
-              <img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" alt="SECABC Logo" className="h-16" />
+              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Logo" className="h-12" />
+              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-12" />
+              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Logo" className="h-12" />
+              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" alt="SECABC Logo" className="h-16" />
             </div>
             <p className="text-sm text-gray-400">Sindicato dos Comerciários do ABC — Trabalhando por você dentro e fora do seu ambiente de trabalho.</p>
           </div>
@@ -255,10 +256,7 @@ const DefaultBeneficioPage = ({ beneficio }) => {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Helmet>
+      <Seo title={pageTitle} description={metaDescription} path={`/beneficios/${beneficio.slug}`} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold font-heading">{beneficio.name}</h1>
         <div className="mt-12 prose max-w-none">
@@ -269,10 +267,10 @@ const DefaultBeneficioPage = ({ beneficio }) => {
               <h2 className="text-2xl font-bold">Galeria de Imagens</h2>
               <p className="mt-2">Esta área exibirá uma galeria de fotos sobre {beneficio.name}.</p>
               <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 1 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1695348935339-11c65b96eace" />
-                <img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 2 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1546904391-f45d9fc30ebb" />
-                <img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 3 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1635833679145-abff44d53dbd" />
-                <img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 4 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1519946713466-a84a422f7f62" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 1 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1695348935339-11c65b96eace" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 2 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1546904391-f45d9fc30ebb" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 3 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1635833679145-abff44d53dbd" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 4 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1519946713466-a84a422f7f62" />
               </div>
             </div>
           )}

@@ -1,7 +1,8 @@
 import React from 'react';
-    import { Helmet } from 'react-helmet';
     import { motion } from 'framer-motion';
     import PageTransition from '@/components/PageTransition';
+    import Seo from '@/components/Seo';
+    import Img from '@/components/Img';
     // Remove ImageIcon as it's no longer needed for placeholders
     // import { FileImage as ImageIcon } from 'lucide-react'; 
     // Remove useToast as there are no interactive elements now
@@ -51,10 +52,11 @@ import React from 'react';
       
       return (
         <PageTransition>
-          <Helmet>
-            <title>Parceiros | SECABC</title>
-            <meta name="description" content="Conheça a rede de parceiros do SECABC e os benefícios exclusivos que eles oferecem para nossos associados." />
-          </Helmet>
+          <Seo
+            title="Parceiros | SECABC"
+            description="Conheça a rede de parceiros do SECABC e os benefícios exclusivos que eles oferecem para nossos associados."
+            path="/parceiros"
+          />
           <div className="bg-background">
             <header className="bg-primary/5 py-20">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -88,7 +90,7 @@ import React from 'react';
                     transition={{ duration: 0.5, delay: (index % 6) * 0.05 }}
                     className="aspect-square bg-white rounded-lg flex items-center justify-center p-4 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    <img src={partner.imgSrc} alt={partner.alt} className="max-w-full max-h-full object-contain" />
+                    <Img src={partner.imgSrc} alt={partner.alt} className="max-w-full max-h-full object-contain" />
                   </motion.div>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import { Phone, Mail, Menu, X, Instagram, Facebook, Youtube, ChevronDown, MapPin
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/components/ui/use-toast";
 import ContactSection from '@/components/ContactSection';
+import Img from '@/components/Img';
 
 const Dropdown = ({ item, isMobile, closeMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -190,7 +191,7 @@ const MainLayout = () => {
         <div className="border-b">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[68px] md:h-20">
             <Link to="/" className="flex items-center">
-              <img alt="Logo SECABC" className="h-12 md:h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
+              <Img alt="Logo SECABC" className="h-12 md:h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
             </Link>
             <nav className="hidden lg:flex items-center justify-center flex-1 space-x-1">
               {navLinks.map((item) =>
@@ -232,7 +233,7 @@ const MainLayout = () => {
           >
             <div className="flex justify-between items-center mb-8">
               <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                <img alt="Logo SECABC" className="h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
+                <Img alt="Logo SECABC" className="h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
               </Link>
               <Button onClick={() => setIsMenuOpen(false)} variant="ghost" size="icon">
                 <X />
@@ -263,7 +264,7 @@ const MainLayout = () => {
                   Homologar Online
                 </a>
               </Button>
-              <Button asChild size="mobile">
+              <Button asChild size="mobile" className="bg-success text-white hover:bg-success/90 animate-pulse">
                 <a href="https://portal.afsys.com.br/secabc/login" target="_blank" rel="noopener noreferrer">
                   Painel do Contribuinte
                 </a>

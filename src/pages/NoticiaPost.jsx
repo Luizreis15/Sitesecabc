@@ -1,6 +1,7 @@
 import React from 'react';
-    import { Helmet } from 'react-helmet';
     import PageTransition from '@/components/PageTransition';
+    import Seo from '@/components/Seo';
+    import Img from '@/components/Img';
     import { useParams, Link, Navigate } from 'react-router-dom';
     import { Calendar, User } from 'lucide-react';
     import { noticias } from '@/data/noticias';
@@ -18,10 +19,13 @@ import React from 'react';
 
       return (
         <PageTransition>
-          <Helmet>
-            <title>{pageTitle}</title>
-            <meta name="description" content={metaDescription} />
-          </Helmet>
+          <Seo
+            title={pageTitle}
+            description={metaDescription}
+            path={`/noticias/${slug}`}
+            image={noticia.img}
+            type="article"
+          />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <article className="max-w-4xl mx-auto">
               <header>
@@ -39,7 +43,7 @@ import React from 'react';
                 </div>
               </header>
               <div className="my-8">
-                <img className="w-full rounded-lg shadow-lg" alt={noticia.title} src={noticia.img} />
+                <Img className="w-full rounded-lg shadow-lg" alt={noticia.title} src={noticia.img} />
               </div>
               <div className="prose max-w-none text-brand-text text-lg" dangerouslySetInnerHTML={{ __html: noticia.content }} />
             </article>

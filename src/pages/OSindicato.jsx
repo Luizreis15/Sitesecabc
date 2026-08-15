@@ -1,6 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
+import Img from '@/components/Img';
 import { useParams } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast";
 
@@ -39,7 +40,7 @@ const OSindicato = () => {
           <div className="mt-8 p-8 bg-gray-100 rounded-lg">
             <h2 className="text-2xl font-bold">Bloco de Imagem do Presidente</h2>
             <p className="mt-2">Esta área exibirá a foto e biografia do presidente.</p>
-            <img className="mt-4 rounded-lg shadow-md w-full max-w-sm mx-auto" alt="Foto do Presidente do SECABC" src="https://images.unsplash.com/photo-1673690718215-c1e05069f92b" />
+            <Img className="mt-4 rounded-lg shadow-md w-full max-w-sm mx-auto" alt="Foto do Presidente do SECABC" src="https://images.unsplash.com/photo-1673690718215-c1e05069f92b" />
           </div>
         </div>
       );
@@ -53,7 +54,7 @@ const OSindicato = () => {
            <div className="mt-8 p-8 bg-gray-100 rounded-lg">
             <h2 className="text-2xl font-bold">Galeria da Diretoria</h2>
             <p className="mt-2">Esta área exibirá as fotos dos membros da diretoria.</p>
-            <img className="mt-4 rounded-lg shadow-md w-full" alt="Foto de grupo da diretoria do SECABC" src="https://images.unsplash.com/photo-1673690715973-b5974f3fb847" />
+            <Img className="mt-4 rounded-lg shadow-md w-full" alt="Foto de grupo da diretoria do SECABC" src="https://images.unsplash.com/photo-1673690715973-b5974f3fb847" />
           </div>
         </div>
       );
@@ -67,12 +68,11 @@ const OSindicato = () => {
       );
   }
 
+  const path = slug ? `/o-sindicato/${slug}` : '/o-sindicato';
+
   return (
     <PageTransition>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Helmet>
+      <Seo title={pageTitle} description={metaDescription} path={path} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {content}
       </div>

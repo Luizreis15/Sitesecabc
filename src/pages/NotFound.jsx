@@ -1,15 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import PageTransition from '@/components/PageTransition';
+import Seo from '@/components/Seo';
 
 const NotFound = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>404 - Página Não Encontrada | SECABC</title>
-      </Helmet>
+      <Seo
+        title="404 - Página Não Encontrada | SECABC"
+        description="A página que você procura não existe ou foi movida."
+        path="/404"
+        noindex
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <h1 className="text-9xl font-bold text-primary">404</h1>
         <h2 className="mt-4 text-3xl font-bold font-heading">Página Não Encontrada</h2>

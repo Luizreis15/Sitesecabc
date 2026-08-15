@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import Seo from '@/components/Seo'
+import Img from '@/components/Img'
 import Autoplay from 'embla-carousel-autoplay'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import {
@@ -203,7 +204,7 @@ function LinkCard({ item }) {
 
 function BannerSlide({ banner, eager }) {
   const img = (
-    <img
+    <Img
       src={banner.img}
       alt={banner.alt}
       loading={eager ? 'eager' : 'lazy'}
@@ -264,13 +265,11 @@ export default function Links() {
 
   return (
     <>
-      <Helmet>
-        <title>SECABC — Links | Sindicato dos Comerciários do ABC</title>
-        <meta
-          name="description"
-          content="Atalhos do SECABC: seja um associado, agende sua homologação, fale no WhatsApp, veja a Festa das Crianças, painel do contribuinte e sedes."
-        />
-      </Helmet>
+      <Seo
+        title="SECABC — Links | Sindicato dos Comerciários do ABC"
+        description="Atalhos do SECABC: seja um associado, agende sua homologação, fale no WhatsApp, veja a Festa das Crianças, painel do contribuinte e sedes."
+        path="/links"
+      />
 
       <main className="flex min-h-screen justify-center bg-primary font-sans text-white">
         <div className="flex w-full max-w-[460px] flex-col">
@@ -303,7 +302,7 @@ export default function Links() {
 
             <div className="relative z-10">
               <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border-2 border-accent/60 bg-white/5 p-3 shadow-lg shadow-black/25 backdrop-blur-sm">
-                <img
+                <Img
                   src="/images/logo/logo.png"
                   alt="Logo SECABC"
                   loading="eager"
@@ -381,7 +380,7 @@ export default function Links() {
           <section className="border-t border-white/15 px-5 pb-8 pt-7">
             <Reveal>
               <div className="relative mb-5 overflow-hidden rounded-[20px] border border-white/15 shadow-xl transition-transform duration-500 hover:scale-[1.02]">
-                <img
+                <Img
                   src="/images/presidente/presidente-01.jpg"
                   alt="Ademar Gonçalves, Presidente do SECABC"
                   loading="lazy"
