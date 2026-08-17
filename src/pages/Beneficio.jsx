@@ -21,16 +21,16 @@ const ComplexoEcoPage = () => {
   };
 
   const galleryImages = [
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/d457adc003819dd37a643f6a0bf92daf.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/0fc11e469571f21d9e3b9e5361048a3f.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/1159384b5d100f86c75884d3349fa2fc.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/d6c501d908c3f0b69c4cd8c569cbf670.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/8ba40c83d9efcc8bd0c002c91f2e6817.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/4b7309424b7c7a0ae587ca8fdae60ac6.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/33aaf46e268101a5a086cfd01db871f5.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b4720c2d5433de1483ab181ebdc9ec96.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/0c739437b69aade6578e13c1a5ea10a8.jpg",
-    "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/afa02eb05654e380b315dd025da3c21d.jpg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
+    "/images/placeholder.svg",
   ];
 
   const attractions = [
@@ -59,7 +59,7 @@ const ComplexoEcoPage = () => {
       />
 
       <div className="bg-blue-50">
-        <header className="relative text-center py-20 md:py-32 text-white bg-cover bg-center" style={{ backgroundImage: "url('https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b4720c2d5433de1483ab181ebdc9ec96.jpg')" }}>
+        <header className="relative text-center py-20 md:py-32 text-white bg-cover bg-center" style={{ backgroundImage: "url('/images/placeholder.svg')" }}>
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Complexo Eco</h1>
@@ -82,17 +82,17 @@ const ComplexoEcoPage = () => {
               </p>
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div className="flex flex-col items-center">
-                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Acqua Park Logo" className="h-20" />
+                  <Img src="/images/placeholder.svg" alt="EcoBlue Acqua Park Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-blue-800">EcoBlue Acqua Park</p>
                   <p className="text-sm text-gray-500">Parque aquático com toboáguas, rio lento e praia de areia branca com ondas artificiais.</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-20" />
+                  <Img src="/images/placeholder.svg" alt="EcoResort Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-green-800">EcoResort</p>
                   <p className="text-sm text-gray-500">Hospedagem completa com suítes, café da manhã e estrutura de lazer.</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Restaurante Logo" className="h-20" />
+                  <Img src="/images/placeholder.svg" alt="Espaço Eco Restaurante Logo" className="h-20" />
                   <p className="mt-4 font-semibold text-yellow-800">Espaço Eco Restaurante</p>
                   <p className="text-sm text-gray-500">Culinária diversificada em ambiente natural e familiar.</p>
                 </div>
@@ -203,10 +203,10 @@ const ComplexoEcoPage = () => {
         <footer className="bg-gray-800 text-white py-8">
           <div className="container mx-auto px-4 text-center">
             <div className="flex justify-center items-center space-x-6 md:space-x-10 mb-6">
-              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/30e143aa979f26e849264118d925b9df.png" alt="EcoBlue Logo" className="h-12" />
-              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5c7dec10ebfb1d3b7163121ba5619822.png" alt="EcoResort Logo" className="h-12" />
-              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b579122f1dbe5c98f1ba21c8a90e5e86.png" alt="Espaço Eco Logo" className="h-12" />
-              <Img src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" alt="SECABC Logo" className="h-16" />
+              <Img src="/images/placeholder.svg" alt="EcoBlue Logo" className="h-12" />
+              <Img src="/images/placeholder.svg" alt="EcoResort Logo" className="h-12" />
+              <Img src="/images/placeholder.svg" alt="Espaço Eco Logo" className="h-12" />
+              <Img src="/images/Logo_secabc.png" alt="SECABC Logo" className="h-16" />
             </div>
             <p className="text-sm text-gray-400">Sindicato dos Comerciários do ABC — Trabalhando por você dentro e fora do seu ambiente de trabalho.</p>
           </div>
@@ -268,10 +268,10 @@ const DefaultBeneficioPage = ({ beneficio }) => {
               <h2 className="text-2xl font-bold">Galeria de Imagens</h2>
               <p className="mt-2">Esta área exibirá uma galeria de fotos sobre {beneficio.name}.</p>
               <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 1 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1695348935339-11c65b96eace" />
-                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 2 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1546904391-f45d9fc30ebb" />
-                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 3 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1635833679145-abff44d53dbd" />
-                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 4 de ${beneficio.name}`} src="https://images.unsplash.com/photo-1519946713466-a84a422f7f62" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 1 de ${beneficio.name}`} src="/images/unsplash-placeholder/photo-1695348935339-11c65b96eace.jpg" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 2 de ${beneficio.name}`} src="/images/unsplash-placeholder/photo-1546904391-f45d9fc30ebb.jpg" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 3 de ${beneficio.name}`} src="/images/unsplash-placeholder/photo-1635833679145-abff44d53dbd.jpg" />
+                <Img className="rounded-lg shadow-md aspect-video object-cover" alt={`Imagem 4 de ${beneficio.name}`} src="/images/unsplash-placeholder/photo-1519946713466-a84a422f7f62.jpg" />
               </div>
             </div>
           )}

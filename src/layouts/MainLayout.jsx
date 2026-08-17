@@ -192,7 +192,7 @@ const MainLayout = () => {
         <div className="border-b">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[68px] md:h-20">
             <Link to="/" className="flex items-center">
-              <Img alt="Logo SECABC" className="h-12 md:h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
+              <Img alt="Logo SECABC" className="h-12 md:h-16 w-auto" src="/images/Logo_secabc.png" />
             </Link>
             <nav className="hidden lg:flex items-center justify-center flex-1 space-x-1">
               {navLinks.map((item) =>
@@ -234,7 +234,7 @@ const MainLayout = () => {
           >
             <div className="flex justify-between items-center mb-8">
               <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                <Img alt="Logo SECABC" className="h-16 w-auto" src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/014e954008da73529bf64af84836449a.png" />
+                <Img alt="Logo SECABC" className="h-16 w-auto" src="/images/Logo_secabc.png" />
               </Link>
               <Button onClick={() => setIsMenuOpen(false)} variant="ghost" size="icon">
                 <X />

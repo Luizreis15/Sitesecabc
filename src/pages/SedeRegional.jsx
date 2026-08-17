@@ -14,17 +14,17 @@ const SedeRegional = () => {
       name: "Mauá", 
       address: "Rua vereador Vicente Orlando 66, Mauá - SP, 09370-140", 
       phone: "(11) 4549-5900",
-      heroImg: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/91fb64d1d80f379f421a6044747657ff.png",
+      heroImg: "/images/placeholder.svg",
       mapQuery: "Rua vereador Vicente Orlando 66, Mauá - SP",
       images: [
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
       ],
       presidente: {
         nome: "Marcílio Costa",
         gestao: "01/03/2010",
-        foto: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/a04952a95498c515fd9fccc0e389890a.png",
+        foto: "/images/placeholder.svg",
         text: "Estou no Sindicato desde 2010, me dedicando e me empenhando todos os dias para a melhoria e fortalecimento da nossa categoria."
       },
       additionalText: "Sede regional de Mauá é responsável por Ribeirão Pires e Rio Grande da Serra"
@@ -33,17 +33,17 @@ const SedeRegional = () => {
       name: "São Caetano", 
       address: "Rua Niterói, 205, Centro, São Caetano do Sul - SP, 09510-200", 
       phone: "(11) 4228-2428",
-      heroImg: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/dc8c1bff438b68e4a14ba224908f80d4.png",
+      heroImg: "/images/placeholder.svg",
       mapQuery: "Rua Niterói, 205, São Caetano do Sul - SP",
       images: [
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
       ],
        presidente: {
         nome: "Nome do Presidente",
         gestao: "2024 - 2028",
-        foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+        foto: "/images/unsplash-placeholder/photo-1534528741775-53994a69daeb.jpg",
         text: "Estou trabalhando com dedicação e compromisso para fortalecer e valorizar nossos associados."
       }
     },
@@ -51,17 +51,17 @@ const SedeRegional = () => {
       name: "São Bernardo", 
       address: "Rua Odeon, 86, Centro, São Bernardo do Campo - SP, 09720-290", 
       phone: "(11) 4127-1464",
-      heroImg: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/01360390e6f7685cf75fc1ea4ba08f77.png",
+      heroImg: "/images/placeholder.svg",
       mapQuery: "Rua Odeon, 86, São Bernardo do Campo - SP",
       images: [
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
-        "https://images.unsplash.com/photo-1656424426915-42c4eec4d621",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
+        "/images/unsplash-placeholder/photo-1656424426915-42c4eec4d621.jpg",
       ],
        presidente: {
         nome: "Nome do Presidente",
         gestao: "2024 - 2028",
-        foto: "https://images.unsplash.com/photo-1534528741775-539mmy4a69daeb",
+        foto: "/images/placeholder.svg",
         text: "Atuo com empenho e dedicação constante para o avanço e bem-estar da categoria."
       }
     },
@@ -69,17 +69,17 @@ const SedeRegional = () => {
       name: "Diadema", 
       address: "Rua São Jorge, 311, Centro, Diadema - SP, 09911-070", 
       phone: "(11) 4048-2121",
-      heroImg: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/c8058177e375ab899b85ca4edcef0c6f.png",
+      heroImg: "/images/placeholder.svg",
       mapQuery: "Rua São Jorge, 311, Diadema - SP",
       images: [
-        "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/4a51ee20f79638b5823592abe4c6ad9c.jpg",
-        "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/1e63d9f0623b7c562dda01d349d1782a.jpg",
-        "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b386bdc31e0129792e5164f807031996.jpg",
+        "/images/placeholder.svg",
+        "/images/placeholder.svg",
+        "/images/placeholder.svg",
       ],
        presidente: {
         nome: "José Eloilton Rodrigues",
         gestao: "01/11/2010",
-        foto: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/ff04ad827be91b005a2a085b73c8dbc9.jpg",
+        foto: "/images/placeholder.svg",
         text: "Integrante do Sindicato desde 2010, sigo todos os dias comprometido em buscar melhorias e conquistas para nossos trabalhadores."
       }
     },

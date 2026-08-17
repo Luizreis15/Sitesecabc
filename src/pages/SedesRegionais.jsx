@@ -9,10 +9,10 @@ import React from 'react';
 
     const SedesRegionais = () => {
       const sedes = [
-        { name: "Mauá", address: "Rua vereador Vicente Orlando 66, Mauá - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5a54305beaf128eb430fe2c8aad7558a.png", slug: "maua" },
-        { name: "São Caetano", address: "Rua Niterói, 205, São Caetano do Sul - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b76c64f83164a42035077599bf770b6e.png", slug: "sao-caetano" },
-        { name: "São Bernardo", address: "Rua Odeon, 86, São Bernardo do Campo - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/163cec1448d5aeb0649c2cd5bdaf32cf.png", slug: "sao-bernardo" },
-        { name: "Diadema", address: "Rua São Jorge, 311, Diadema - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/f9ad057a35869b7aa1081005b1c46606.png", slug: "diadema" },
+        { name: "Mauá", address: "Rua vereador Vicente Orlando 66, Mauá - SP", img: "/images/placeholder.svg", slug: "maua" },
+        { name: "São Caetano", address: "Rua Niterói, 205, São Caetano do Sul - SP", img: "/images/placeholder.svg", slug: "sao-caetano" },
+        { name: "São Bernardo", address: "Rua Odeon, 86, São Bernardo do Campo - SP", img: "/images/placeholder.svg", slug: "sao-bernardo" },
+        { name: "Diadema", address: "Rua São Jorge, 311, Diadema - SP", img: "/images/placeholder.svg", slug: "diadema" },
       ];
 
       return (

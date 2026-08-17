@@ -40,7 +40,7 @@ const OSindicato = () => {
           <div className="mt-8 p-8 bg-gray-100 rounded-lg">
             <h2 className="text-2xl font-bold">Bloco de Imagem do Presidente</h2>
             <p className="mt-2">Esta área exibirá a foto e biografia do presidente.</p>
-            <Img className="mt-4 rounded-lg shadow-md w-full max-w-sm mx-auto" alt="Foto do Presidente do SECABC" src="https://images.unsplash.com/photo-1673690718215-c1e05069f92b" />
+            <Img className="mt-4 rounded-lg shadow-md w-full max-w-sm mx-auto" alt="Foto do Presidente do SECABC" src="/images/unsplash-placeholder/photo-1673690718215-c1e05069f92b.jpg" />
           </div>
         </div>
       );
@@ -54,7 +54,7 @@ const OSindicato = () => {
            <div className="mt-8 p-8 bg-gray-100 rounded-lg">
             <h2 className="text-2xl font-bold">Galeria da Diretoria</h2>
             <p className="mt-2">Esta área exibirá as fotos dos membros da diretoria.</p>
-            <Img className="mt-4 rounded-lg shadow-md w-full" alt="Foto de grupo da diretoria do SECABC" src="https://images.unsplash.com/photo-1673690715973-b5974f3fb847" />
+            <Img className="mt-4 rounded-lg shadow-md w-full" alt="Foto de grupo da diretoria do SECABC" src="/images/unsplash-placeholder/photo-1673690715973-b5974f3fb847.jpg" />
           </div>
         </div>
       );

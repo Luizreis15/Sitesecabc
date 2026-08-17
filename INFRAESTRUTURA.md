@@ -51,19 +51,43 @@ Ninguém nesta correção teve acesso ao painel de hospedagem — tudo abaixo fo
 2. **Essa mesma conta de hospedagem é a que serve o e-mail (`mail.secabc.org.br`, IP `177.234.159.211`)?** Assumindo que sim pela coincidência de padrão, mas não foi confirmado diretamente — se for uma conta diferente, o aviso da seção "Antes de cancelar" pode não se aplicar do jeito que está escrito, e vale corrigir este documento.
 3. **Existem outros subdomínios ou registros DNS não descobertos nesta checagem**, apontando para a hospedagem original? Só foi possível checar os hostnames óbvios (`secabc.org.br`, `www`, `mail`) — uma varredura completa do painel de DNS ou do hPanel é a única forma de ter certeza.
 
-## ⚠️ Achado urgente (rodada 2): imagens do CDN `horizons-cdn.hostinger.com` sem arquivo de origem
+## 📌 Episódio: perda dos assets do CDN `horizons-cdn.hostinger.com`
 
-Não fazia parte do briefing desta rodada — encontrado ao procurar o logo oficial para gerar o favicon, registrado aqui por ser urgente e ter prazo.
+**Detectado:** rodada 2, ao procurar o logo oficial para gerar o favicon — não fazia parte do briefing daquela rodada, foi um achado incidental.
 
-Todas as imagens do projeto hospedadas em `https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/...` (logo do cabeçalho, foto da diretoria, fotos de sedes, logos de parceiros, imagem do documento de homologação, e provavelmente outras que usam o mesmo prefixo) estão retornando **404 "NoSuchKey" direto na origem do CDN**. Testado com 5 URLs diferentes desse prefixo — todas falharam.
+**O que aconteceu:** todas as imagens do projeto hospedadas em `https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/...` (logo do cabeçalho, foto da diretoria, fotos de sedes, logos de parceiros, imagem do documento de homologação, galeria e logos do Complexo Eco) estavam retornando **404 "NoSuchKey" direto na origem do CDN** — o bucket de onde essas imagens vinham foi apagado ou ficou inacessível em algum momento não determinado. Ainda apareciam no site graças a cache de borda (`cache-control: public, max-age=604800`, até 7 dias), que foi expirando de forma imprevisível página a página.
 
-- **Por que ainda aparecem no site:** o CDN cacheia respostas por até 7 dias (`cache-control: public, max-age=604800`), incluindo caches negativos de erro 404. Cada imagem vai sumir silenciosamente conforme o cache da borda que a serve expirar — sem aviso, em datas diferentes para cada imagem/região.
-- **O que evita quebra visível quando isso acontecer:** o componente `Img` (`src/components/Img.jsx`, criado na rodada 1) já troca automaticamente qualquer imagem quebrada por um placeholder no navy/dourado da marca — então o resultado não será um ícone de imagem quebrada, mas o logo do cabeçalho, as fotos da diretoria e sedes, etc., vão virar genéricos.
-- **O que precisa ser decidido:** essas imagens precisam ser baixadas (enquanto ainda carregam) e re-hospedadas localmente em `public/images/`, como já foi feito com outras imagens do projeto (ex.: `Logo_secabc.png`, usado para gerar o favicon nesta rodada, é uma cópia local não afetada por esse problema). Esse é um trabalho de escopo médio — dezenas de imagens, provavelmente a maioria do que usa esse CDN — e não foi feito aqui porque não estava no briefing desta rodada.
+**Resgate (rodada 3):** rodado um script de download (`tools/rescue-assets.js`) contra as 77 URLs externas únicas do projeto (60 do horizons-cdn + 17 do Unsplash), com retry e sem cache local. Resultado: **as 60 URLs do horizons-cdn — 100% delas — já estavam irrecuperáveis por download direto**, nenhuma bateu em cache de borda durante as tentativas. Só os 8 Unsplash bem-formados foram salvos (ver `ASSET-RESCUE-REPORT.md` para a lista URL-a-URL). Isso significa que o cache que ainda sustentava essas imagens no site ao vivo já tinha esgotado, ou estava prestes a esgotar, no momento do resgate — a corrida contra o prazo de 7 dias foi perdida para o horizons-cdn especificamente.
+
+**O que foi feito imediatamente:** todas as 91 ocorrências no código (`tools/repoint-assets.js`) foram repontadas para caminhos locais — nenhuma referência a domínio externo de imagem restou no projeto. Logo do cabeçalho e o logo "SECABC" do rodapé do Complexo Eco foram apontados para `public/images/Logo_secabc.png` (o brasão real, já usado para o favicon, não um placeholder genérico). Os slots sem arquivo real recebido (praticamente tudo que vinha do horizons-cdn) ficam com `public/images/placeholder.svg` — a marca da entidade, não um ícone de imagem quebrada — até o arquivo correto chegar.
+
+## 🔒 Regra permanente
+
+**Nenhum asset do site (logo, foto institucional, documento) pode depender de CDN de terceiro.** Todo asset usado pelo site vive versionado em `public/images/` dentro do próprio repositório. A causa raiz deste episódio foi exatamente o oposto disso — dependência de um serviço externo (`horizons-cdn.hostinger.com`, do construtor "Hostinger Horizons" que originou o projeto) fora do controle do time que mantém o site hoje.
+
+Isso vale para qualquer imagem nova adicionada dali para frente: baixar e commitar em `public/images/`, nunca linkar direto a um CDN, serviço de terceiro ou banco de imagens externo (Unsplash incluso — os 8 arquivos resgatados desta vez também são temporários, ver lista abaixo).
+
+## O que precisa vir do cliente (Fase 3 — pendente, priorizado)
+
+Nada abaixo foi substituído por imagem de banco — cada slot sem arquivo real fica com o placeholder da marca até chegar o arquivo correto.
+
+1. **Prioridade absoluta — Logo oficial em alta resolução.** `public/images/Logo_secabc.png` (225×225, sem alpha) é o que existe hoje e já está em uso no cabeçalho e no favicon — funciona, mas é baixa resolução para qualquer uso maior que ícone. Se existir uma versão vetorial (AI/EPS/SVG) ou um PNG maior, é o pedido mais importante desta lista: sem logo em boa qualidade, a entidade fica com uma marca genérica ou de baixa resolução no próprio site.
+2. **Foto da diretoria** (usada na home) — perdida, sem substituto local.
+3. **Fotos reais das sedes regionais** (Mauá, São Caetano, São Bernardo, Diadema — hero de cada página + galeria) — perdidas; as de Mauá/São Caetano/São Bernardo já eram fotos genéricas do Unsplash antes disso (pendência antiga, ver abaixo), agora estão como placeholder da marca.
+4. **Foto do presidente de São Bernardo** — já estava quebrada antes deste episódio (URL do Unsplash com typo, `539mmy4a`), continua pendente.
+5. **Logos dos 33 parceiros** — perdidos. Prioridade menor que os itens acima (não é a marca do SECABC), mas é a página inteira de Parceiros hoje mostrando placeholder repetido.
+6. **Imagem do documento de homologação** (usada no botão de download em `/servicos/homologacoes`) — perdida. Sem ela, o botão "Baixar Documento" está quebrado em termos de conteúdo (o link técnico continua funcionando, mas não há imagem pra baixar).
+7. **Galeria e logos do Complexo Eco** (EcoBlue, EcoResort, Espaço Eco) — 13 imagens perdidas.
+
+**Antes de pedir tudo isso ao cliente**, vale tentar a Fase 3 de recuperação por outras vias (Wayback Machine, WordPress antigo se ainda estiver nos arquivos da Hostinger, Instagram/Facebook do SECABC) — não executada ainda, é o próximo passo depois do merge, conforme ordem de execução combinada.
+
+## Nota sobre os 8 arquivos Unsplash resgatados
+
+Ficaram salvos em `public/images/unsplash-placeholder/` nesta rodada, na resolução original do Unsplash (sem redimensionar, conforme instruído) — juntos somam **~25MB**, o que é pesado para o peso de página do site. São fotos genéricas de banco, não fotos reais das sedes/pessoas — já estavam sinalizadas no `CLAUDE.md` como placeholder a substituir. Manter local resolve a dependência de CDN externo, mas não resolve o problema de fundo: são imagens erradas para o contexto (não são fotos reais do SECABC) e precisam ser trocadas pelas fotos verdadeiras assim que chegarem, não apenas otimizadas.
 
 ## Pendências conhecidas (não é para mexer sem pedido explícito)
 
-- Fotos genéricas do Unsplash nas páginas de sede (`SedeRegional.jsx`) e URL com typo (`539mmy4a`) na foto do presidente de São Bernardo — pendente desde antes desta correção, documentado também no `CLAUDE.md`.
+- Fotos genéricas nas páginas de sede — antes eram links do Unsplash (`SedeRegional.jsx`), pendente desde antes desta correção e documentado no `CLAUDE.md`; após a rodada 3, viraram arquivos locais em `public/images/unsplash-placeholder/` (Mauá/São Caetano/São Bernardo) ou o placeholder da marca (Diadema, presidente de São Bernardo — essa era a URL com typo `539mmy4a`, agora corretamente com o placeholder em vez de uma URL quebrada). Continuam sendo fotos erradas para o contexto, só pararam de depender de serviço externo — seguem precisando das fotos reais.
 - O mesmo problema de captura de scroll no mapa incorporado do Google Maps existe em `/beneficios/centro-de-lazer` (Complexo Eco) — só o mapa de `/contato` foi corrigido, porque era o único citado no briefing da rodada 1.
 - `src/components/ui/sonner.jsx` referencia os pacotes `next-themes` e `sonner`, que não estão instalados — gera erro de lint pré-existente, não usado em nenhuma página ativa do projeto.
 - A paleta de cores dos tokens Tailwind atuais (`primary #134C8A`, `accent #F6A52A`) diverge da paleta usada nas peças de rede social e no briefing do projeto de blog (`#14325D`, `#F9C31F`) — decisão de marca a ser tomada pelo cliente, não uma correção de código.

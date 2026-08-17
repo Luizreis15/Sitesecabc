@@ -13,7 +13,7 @@ const Homologacoes = () => {
 
   // Using the CDN URL directly to ensure accessibility.
   // This guarantees the file is available regardless of local file system state.
-  const DOC_IMAGE_URL = "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/5d6a78fcbbbb041194681bbc01f81d4b.png";
+  const DOC_IMAGE_URL = "/images/placeholder.svg";
 
   const handleAgendar = () => {
     window.open(buildWhatsappUrl(WHATSAPP_HOMOLOGACAO_NUMBER), "_blank", "noopener,noreferrer");

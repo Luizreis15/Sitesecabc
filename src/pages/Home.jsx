@@ -54,10 +54,10 @@ const Home = () => {
   ];
 
   const sedes = [
-    { name: "Mauá", address: "Rua vereador Vicente Orlando 66, Mauá - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/faa01d8a359b777c0dc2d21d44247a96.png", slug: "maua" },
-    { name: "São Caetano", address: "Rua Niterói, 205, São Caetano do Sul - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/ab65032a961095c518d48b853e209b80.png", slug: "sao-caetano" },
-    { name: "São Bernardo", address: "Rua Odeon, 86, São Bernardo do Campo - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/b1b2d8106a728d0ff080224e88200cce.jpg", slug: "sao-bernardo" },
-    { name: "Diadema", address: "Rua São Jorge, 311, Diadema - SP", img: "https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/f5f043c89a996bb6b5b69885dc3db46d.jpg", slug: "diadema" },
+    { name: "Mauá", address: "Rua vereador Vicente Orlando 66, Mauá - SP", img: "/images/placeholder.svg", slug: "maua" },
+    { name: "São Caetano", address: "Rua Niterói, 205, São Caetano do Sul - SP", img: "/images/placeholder.svg", slug: "sao-caetano" },
+    { name: "São Bernardo", address: "Rua Odeon, 86, São Bernardo do Campo - SP", img: "/images/placeholder.svg", slug: "sao-bernardo" },
+    { name: "Diadema", address: "Rua São Jorge, 311, Diadema - SP", img: "/images/placeholder.svg", slug: "diadema" },
   ];
 
   const noticiasRecentes = noticias.slice(0, 3);
@@ -251,7 +251,7 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Img
-              src="https://horizons-cdn.hostinger.com/fb42e468-e100-43d7-9488-9dfef375dd7f/af13c4f32b96d04d72f502f2d9764948.png"
+              src="/images/placeholder.svg"
               alt="Diretoria do SECABC reunida"
               className="rounded-lg shadow-xl mx-auto"
             />
