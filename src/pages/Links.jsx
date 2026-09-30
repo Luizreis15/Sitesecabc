@@ -29,8 +29,8 @@ const whatsappGeral = buildWhatsappUrl(WHATSAPP_NUMBER)
 const BANNERS = [
   {
     img: '/images/banners/banner-01.jpg',
-    href: 'https://www.secabc.online/festa-criancas',
-    alt: 'Festa das Crianças SECABC',
+    href: 'https://novasede.secabc.online',
+    alt: 'Inauguração Nova Casa do Comerciário — São Caetano do Sul',
   },
   {
     img: '/images/banners/banner-02.jpg',
@@ -80,9 +80,9 @@ const linkItems = [
     external: true,
   },
   {
-    title: 'Festa das Crianças',
-    description: 'Acesse a página do evento',
-    href: 'https://www.secabc.online/festa-criancas',
+    title: 'Nova Casa do Comerciário',
+    description: 'Inauguração em São Caetano do Sul — participe',
+    href: 'https://novasede.secabc.online',
     icon: PartyPopper,
     variant: 'outline',
     external: true,

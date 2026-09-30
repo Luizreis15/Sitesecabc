@@ -19,8 +19,8 @@ const Home = () => {
     {
       desktop: '/images/banners/Banner1_Desktop.png',
       mobile: '/images/banners/Banner1_Mobile.png',
-      alt: 'SECABC - Festa das Crianças',
-      href: 'https://www.secabc.online/festa-criancas',
+      alt: 'Inauguração Nova Casa do Comerciário — São Caetano do Sul',
+      href: 'https://novasede.secabc.online',
     },
     {
       desktop: '/images/banners/Banner2_Desktop.png',
