@@ -9,7 +9,6 @@ import Autoplay from 'embla-carousel-autoplay';
 import PageTransition from '@/components/PageTransition';
 import Seo from '@/components/Seo';
 import Img from '@/components/Img';
-import SimplePopup from '@/components/SimplePopup';
 import { noticias } from '@/data/noticias';
 
 const Home = () => {
@@ -69,9 +68,6 @@ const Home = () => {
         description="Bem-vindo ao SECABC. Conheça nossos benefícios, serviços e junte-se a nós na luta pelos direitos dos comerciários do ABC."
         path="/"
       />
-
-      {/* Simple Popup Modal */}
-      <SimplePopup />
 
       {/* Hero Carousel */}
       <section className="relative overflow-hidden">
